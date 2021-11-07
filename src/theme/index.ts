@@ -1,3 +1,4 @@
+// https://coolors.co/f1f5f9-d1ac00-fbfbfb-040f0f-21c063
 export const preset = {
   breakpoints: ["1080px", "1080px"],
   colors: {
