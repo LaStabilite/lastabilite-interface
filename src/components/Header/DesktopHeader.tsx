@@ -45,6 +45,7 @@ export const DesktopHeader: React.FC = () => {
           </Box>
           <Flex
             sx={{
+              ml: "120px",
               alignItems: "center",
             }}
           >
