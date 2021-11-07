@@ -38,9 +38,9 @@ export const preset = {
     },
   },
   fonts: {
-    body: "Roboto",
-    heading: "Roboto",
-    monospace: "Roboto",
+    body: "Raleway",
+    heading: "Raleway",
+    monospace: "Raleway",
   },
   fontSizes: [12, 14, 16, 18, 20, 24, 28, 32, 48, 64, 96],
   lineHeights: {
