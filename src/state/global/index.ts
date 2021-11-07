@@ -5,6 +5,7 @@ export enum Page {
   VAULTS = "vaults",
   MINT = "mint",
   TREASURY = "treasury",
+  FAQ = "faq",
 }
 
 interface GlobalState {

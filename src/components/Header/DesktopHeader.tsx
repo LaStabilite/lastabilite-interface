@@ -52,6 +52,7 @@ export const DesktopHeader: React.FC = () => {
             <HeaderLink page={Page.VAULTS}>Vaults</HeaderLink>
             <HeaderLink page={Page.MINT}>Mint</HeaderLink>
             <HeaderLink page={Page.TREASURY}>Treasury</HeaderLink>
+            <HeaderLink page={Page.FAQ}>FAQ</HeaderLink>
           </Flex>
           <Flex>
             <ColorModeToggle />

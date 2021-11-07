@@ -48,6 +48,7 @@ export const MobileHeader: React.FC = () => {
         <HeaderButton page={Page.VAULTS}>Vaults</HeaderButton>
         <HeaderButton page={Page.MINT}>Mint</HeaderButton>
         <HeaderButton page={Page.TREASURY}>Treasury</HeaderButton>
+        <HeaderButton page={Page.FAQ}>FAQ</HeaderButton>
       </Flex>
     </Container>
   );

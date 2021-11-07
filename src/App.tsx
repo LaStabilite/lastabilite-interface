@@ -4,6 +4,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import { Vaults } from "src/pages/Vaults";
 import { Mint } from "src/pages/Mint";
 import { Treasury } from "src/pages/Treasury";
+import { FAQ } from "src/pages/FAQ";
 import { Header } from "src/components/Header";
 import Modal from "react-modal";
 import { Footer } from "src/components/Footer";
@@ -30,8 +31,11 @@ const App: React.FC = () => {
             <Route exact path={`/${Page.MINT}`}>
               <Mint />
             </Route>
-            <Route exact path="/treasury">
+            <Route exact path={`/${Page.TREASURY}`}>
               <Treasury />
+            </Route>
+            <Route exact path={`/${Page.FAQ}`}>
+              <FAQ />
             </Route>
           </Switch>
         </Container>
