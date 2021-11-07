@@ -1,21 +1,14 @@
 export const preset = {
   breakpoints: ["1080px", "1080px"],
   colors: {
-    purple25: "#F5F2FF",
-    purple50: "#ECE6FE",
-    purple100: "#CCC3FC",
-    purple300: "#7C71FC",
-    purple400: "#5352FC",
-    black800: "#363945",
+    primaryText: "#21c063",
+    secondaryBackground: "#F1F5F9",
+    primary: "#21c063",
 
-    primaryText: "#5352FC",
-    secondaryBackground: "#F5F2FF",
-    primary: "#5352FC",
-
-    text: "#333333",
+    text: "#040F0F",
     primaryButtonText: "#FAFAFA",
     accent: "#7C71FD",
-    background: "#fff",
+    background: "#FBFBFB",
     secondary: "#bababa",
     muted: "#f6f6f9",
     gray: "#bababa",
@@ -25,14 +18,14 @@ export const preset = {
     disabled: "#BDBDBD",
     modes: {
       dark: {
-        primaryText: "#CCC3FC",
+        primaryText: "#21c063",
         secondaryBackground: "#363945",
-        primary: "#7C71FC",
+        primary: "#21c063",
 
-        text: "#FAFAFA",
-        primaryButtonText: "#FAFAFA",
+        text: "#FBFBFB",
+        primaryButtonText: "#FBFBFB",
         accent: "#5352FC",
-        background: "#212121",
+        background: "#040F0F",
         secondary: "#bababa",
         muted: "#757575",
         gray: "#bababa",
