@@ -19,20 +19,22 @@ const App: React.FC = () => {
     <Container sx={{ maxWidth: "100%", width: "auto" }}>
       <Container sx={{ py: 6, px: [4, "15%"] }}>
         <Header />
-        <Switch>
-          <Route exact path="/">
-            <Redirect to={Page.VAULTS} />
-          </Route>
-          <Route exact path={`/${Page.VAULTS}`}>
-            <Vaults />
-          </Route>
-          <Route exact path={`/${Page.MINT}`}>
-            <Mint />
-          </Route>
-          <Route exact path="/treasury">
-            <Treasury />
-          </Route>
-        </Switch>
+        <Container sx={{ pt: "36px" }}>
+          <Switch>
+            <Route exact path="/">
+              <Redirect to={Page.VAULTS} />
+            </Route>
+            <Route exact path={`/${Page.VAULTS}`}>
+              <Vaults />
+            </Route>
+            <Route exact path={`/${Page.MINT}`}>
+              <Mint />
+            </Route>
+            <Route exact path="/treasury">
+              <Treasury />
+            </Route>
+          </Switch>
+        </Container>
       </Container>
       <Footer />
       <ToastContainer

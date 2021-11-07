@@ -47,7 +47,6 @@ export const Mint: React.FC = () => {
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        mt: ["33%", "10%"],
       }}
     >
       <Box mb={4}>
@@ -113,7 +112,7 @@ export const Mint: React.FC = () => {
           <Text variant="form">Amount</Text>
           <Text variant="form">
             <Link onClick={() => setAmount(max.toString())}>
-              max: {humanFriendlyNumber(max)} {minting ? vault.name : "stabUSD"}
+              max: {humanFriendlyNumber(max)}
             </Link>
           </Text>
         </Flex>

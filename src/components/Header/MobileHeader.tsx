@@ -22,7 +22,7 @@ const HeaderButton: React.FC<{ page: Page }> = ({ page, children }) => {
 
 export const MobileHeader: React.FC = () => {
   return (
-    <Container sx={{ pt: 4, px: 3, width: "auto" }}>
+    <Container sx={{ width: "auto" }}>
       <Flex
         sx={{
           mb: 2,

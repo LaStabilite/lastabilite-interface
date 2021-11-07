@@ -34,7 +34,6 @@ export const Vault: React.FC<Props> = ({ vaultConfig }) => {
   return (
     <Card
       sx={{
-        width: "500px",
         py: 4,
         px: 6,
         maxWidth: "100%",
@@ -80,7 +79,7 @@ export const Vault: React.FC<Props> = ({ vaultConfig }) => {
         <Text variant="form">Amount</Text>
         <Text variant="form">
           <Link onClick={() => setAmount(max.toString())}>
-            max: {humanFriendlyNumber(max)} {vaultConfig.lockAssetName ?? "???"}
+            max: {humanFriendlyNumber(max)}
           </Link>
         </Text>
       </Flex>

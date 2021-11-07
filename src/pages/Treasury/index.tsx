@@ -18,7 +18,6 @@ export const Treasury: React.FC = () => {
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
-        mt: ["33%", "10%"],
       }}
     >
       <Box mb={4}>

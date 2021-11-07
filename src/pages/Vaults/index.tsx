@@ -10,7 +10,6 @@ export const Vaults: React.FC = () => {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        mt: ["33%", "10%"],
         textAlign: "center",
       }}
     >
