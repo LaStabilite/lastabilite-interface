@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { Box, Container, Flex, Text } from "theme-ui";
 import { Logo } from "src/components/Logo";
+import { ColorModeToggle } from "src/components/ColorModeToggle";
 import { AccountProfile } from "src/components/AccountProfile";
 import { StyledLink } from "src/components/StyledLink";
 import { Page } from "src/state/global";
@@ -51,7 +52,10 @@ export const DesktopHeader: React.FC = () => {
             <HeaderLink page={Page.MINT}>Mint</HeaderLink>
             <HeaderLink page={Page.TREASURY}>Treasury</HeaderLink>
           </Flex>
-          <AccountProfile />
+          <Flex>
+            <ColorModeToggle />
+            <AccountProfile />
+          </Flex>
         </Flex>
       </Container>
     </>

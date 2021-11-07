@@ -1,12 +1,15 @@
+import { useColorMode } from "@theme-ui/color-modes";
 import { IIconProps } from "./types";
 
 export const LogoIcon: React.FC<IIconProps> = ({ size = 32 }) => {
+  const [colorMode] = useColorMode();
+  const fill = colorMode === "dark" ? "#ffffff" : "#000000";
   return (
     <svg
       width={size}
       height={size / 1.23}
       viewBox="0 0 256 256"
-      fill="#ffffff"
+      fill={fill}
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect width="256" height="256" fill="none"></rect>
@@ -17,7 +20,7 @@ export const LogoIcon: React.FC<IIconProps> = ({ size = 32 }) => {
         height="128"
         rx="8"
         stroke-width="16"
-        stroke="#ffffff"
+        stroke={fill}
         stroke-linecap="round"
         stroke-linejoin="round"
         fill="none"
@@ -27,7 +30,7 @@ export const LogoIcon: React.FC<IIconProps> = ({ size = 32 }) => {
         cy="128"
         r="32"
         fill="none"
-        stroke="#ffffff"
+        stroke={fill}
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="16"
@@ -38,7 +41,7 @@ export const LogoIcon: React.FC<IIconProps> = ({ size = 32 }) => {
         x2="240"
         y2="120"
         fill="none"
-        stroke="#ffffff"
+        stroke={fill}
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="16"
@@ -49,7 +52,7 @@ export const LogoIcon: React.FC<IIconProps> = ({ size = 32 }) => {
         x2="240"
         y2="136"
         fill="none"
-        stroke="#ffffff"
+        stroke={fill}
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="16"
@@ -60,7 +63,7 @@ export const LogoIcon: React.FC<IIconProps> = ({ size = 32 }) => {
         x2="16"
         y2="120"
         fill="none"
-        stroke="#ffffff"
+        stroke={fill}
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="16"
@@ -71,7 +74,7 @@ export const LogoIcon: React.FC<IIconProps> = ({ size = 32 }) => {
         x2="16"
         y2="136"
         fill="none"
-        stroke="#ffffff"
+        stroke={fill}
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="16"

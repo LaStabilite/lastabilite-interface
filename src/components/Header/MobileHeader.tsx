@@ -4,6 +4,7 @@ import { useLocation, Link } from "react-router-dom";
 import { WalletCard } from "src/components/Wallet/WalletCard";
 import { LogoIcon } from "src/icons/LogoIcon";
 import { Page } from "src/state/global";
+import { ColorModeToggle } from "../ColorModeToggle";
 
 const HeaderButton: React.FC<{ page: Page }> = ({ page, children }) => {
   const location = useLocation();
@@ -31,7 +32,10 @@ export const MobileHeader: React.FC = () => {
         }}
       >
         <LogoIcon />
-        <WalletCard />
+        <Flex>
+          <ColorModeToggle />
+          <WalletCard />
+        </Flex>
       </Flex>
       <Flex
         sx={{
