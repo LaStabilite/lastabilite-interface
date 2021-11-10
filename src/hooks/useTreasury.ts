@@ -11,6 +11,7 @@ import {
   vaults,
   VaultConfig,
   DEFAULT_GAS_PRICE,
+  MULTISIG,
 } from "src/config";
 import { toastTx } from "src/utils/toastTx";
 
@@ -24,7 +25,6 @@ export const useTreasury = () => {
     ) as unknown as Stabilite;
 
     const totalStabiliteSupply = await stabilite.methods.totalSupply().call();
-    const owner = await stabilite.methods.owner().call();
 
     const vaultData: {
       vaultConfig: VaultConfig;
@@ -65,9 +65,14 @@ export const useTreasury = () => {
           StabiliteAbi as AbiItem[],
           STABILITE_USD
         ) as unknown as Stabilite;
-        const tx = await stabilite.methods
+        const multisig = await kit._web3Contracts.getMultiSig(MULTISIG);
+        const data = stabilite.methods
           .setDepositLimit(vaultConfig.address, toWei(newLimit))
+          .encodeABI();
+        const tx = await multisig.methods
+          .submitTransaction(STABILITE_USD, 0, data)
           .send({ from: kit.defaultAccount, gasPrice: DEFAULT_GAS_PRICE });
+
         toastTx(tx.transactionHash);
       };
       const whitelist = async () => {
@@ -76,8 +81,12 @@ export const useTreasury = () => {
           StabiliteAbi as AbiItem[],
           STABILITE_USD
         ) as unknown as Stabilite;
-        const tx = await stabilite.methods
+        const multisig = await kit._web3Contracts.getMultiSig(MULTISIG);
+        const data = await stabilite.methods
           .whitelistVault(vaultConfig.address)
+          .encodeABI();
+        const tx = await multisig.methods
+          .submitTransaction(STABILITE_USD, 0, data)
           .send({ from: kit.defaultAccount, gasPrice: DEFAULT_GAS_PRICE });
         toastTx(tx.transactionHash);
       };
@@ -87,8 +96,12 @@ export const useTreasury = () => {
           StabiliteAbi as AbiItem[],
           STABILITE_USD
         ) as unknown as Stabilite;
-        const tx = await stabilite.methods
+        const multisig = await kit._web3Contracts.getMultiSig(MULTISIG);
+        const data = await stabilite.methods
           .banVault(vaultConfig.address)
+          .encodeABI();
+        const tx = await multisig.methods
+          .submitTransaction(STABILITE_USD, 0, data)
           .send({ from: kit.defaultAccount, gasPrice: DEFAULT_GAS_PRICE });
         toastTx(tx.transactionHash);
       };
@@ -106,7 +119,6 @@ export const useTreasury = () => {
 
     return {
       totalStabiliteSupply,
-      owner,
       vaultData,
     };
   }, [getConnectedKit, kit.web3.eth.Contract]);

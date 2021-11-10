@@ -5,7 +5,7 @@ import { BlockText } from "src/components/BlockText";
 import { humanFriendlyWei } from "src/utils/number";
 import { useContractKit } from "@celo-tools/use-contractkit";
 import { BlockscoutAddressLink } from "src/components/BlockscoutAddressLink";
-import { STABILITE_USD } from "src/config";
+import { MULTISIG_OWNERS, STABILITE_USD } from "src/config";
 
 export const Treasury: React.FC = () => {
   const { address } = useContractKit();
@@ -39,7 +39,7 @@ export const Treasury: React.FC = () => {
                 {vd.vaultConfig.name}
               </BlockscoutAddressLink>
             </BlockText>
-            {treasury?.owner === address && (
+            {MULTISIG_OWNERS.includes(address || "") && (
               <Button
                 sx={{ px: 2, py: 1, ml: 2 }}
                 onClick={async () => {
@@ -63,7 +63,7 @@ export const Treasury: React.FC = () => {
                 {vd.vaultConfig.name}
               </BlockscoutAddressLink>
             </BlockText>
-            {treasury?.owner === address && (
+            {MULTISIG_OWNERS.includes(address || "") && (
               <Button
                 sx={{ px: 2, py: 1, ml: 2 }}
                 onClick={async () => {

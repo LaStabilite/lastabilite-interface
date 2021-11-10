@@ -1,5 +1,8 @@
 import { toWei } from "web3-utils";
 
+// MULTISIG that owns STABILITE_USD
+export const MULTISIG = "0xebF7f27d0B03C519cc52Be35cD534064a0Ce2466";
+export const MULTISIG_OWNERS = ["0xf1d10a171fF8C269882f132803c64e5dcC12875F"];
 export const STABILITE_USD = "0x0a60c25Ef6021fC3B479914E6bcA7C03c18A97f1";
 
 export const DEFAULT_GAS_PRICE = toWei("0.13", "gwei");
