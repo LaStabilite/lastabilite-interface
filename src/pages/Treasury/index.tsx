@@ -21,11 +21,11 @@ export const Treasury: React.FC = () => {
       }}
     >
       <Box mb={4}>
-        <Heading as="h2">stabUSD Total Supply</Heading>
+        <Heading as="h2">stabilUSD Total Supply</Heading>
         <BlockText variant="primary">
           {humanFriendlyWei(treasury?.totalStabiliteSupply.toString() ?? "0")}{" "}
           <BlockscoutAddressLink address={STABILITE_USD}>
-            stabUSD
+            stabilUSD
           </BlockscoutAddressLink>
         </BlockText>
       </Box>

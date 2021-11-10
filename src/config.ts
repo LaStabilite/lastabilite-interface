@@ -1,6 +1,6 @@
 import { toWei } from "web3-utils";
 
-export const STABILITE_USD = "0x9ef8756633414f648ba8597C3FcD5f02b45DcCA2";
+export const STABILITE_USD = "0x0a60c25Ef6021fC3B479914E6bcA7C03c18A97f1";
 
 export const DEFAULT_GAS_PRICE = toWei("0.13", "gwei");
 

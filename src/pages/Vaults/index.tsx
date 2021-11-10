@@ -24,7 +24,7 @@ export const Vaults: React.FC = () => {
           >
             Mobius LP tokens
           </Link>{" "}
-          to get vault tokens. Vault tokens can be used to mint stabUSD.
+          to get vault tokens. Vault tokens can be used to mint stabilUSD.
         </Text>
       </Box>
       <Flex sx={{ flexWrap: "wrap" }}>

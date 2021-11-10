@@ -1,6 +1,6 @@
 import React from "react";
 import { Switcher } from "src/components/Switcher";
-import { VaultConfig, vaults } from "src/config";
+import { STABILITE_USD, VaultConfig, vaults } from "src/config";
 import {
   Box,
   Button,
@@ -23,7 +23,7 @@ export const Mint: React.FC = () => {
   const [amount, setAmount] = React.useState("0");
   const [vault] = React.useState<VaultConfig>(vaults[0]!);
   const [stabilite, refetchStabilite] = useStabilite(
-    "0x9ef8756633414f648ba8597C3FcD5f02b45DcCA2",
+    STABILITE_USD,
     vault.address
   );
 
@@ -50,9 +50,9 @@ export const Mint: React.FC = () => {
       }}
     >
       <Box mb={4}>
-        <Heading as="h2">Mint stabUSD</Heading>
+        <Heading as="h2">Mint stabilUSD</Heading>
         <Text variant="regularGray">
-          Use vault tokens to mint stabUSD. stabUSD can be used to farm on{" "}
+          Use vault tokens to mint stabilUSD. stabilUSD can be used to farm on{" "}
           <Link
             href="https://app.ubeswap.org"
             target="_blank"
@@ -160,11 +160,11 @@ export const Mint: React.FC = () => {
             <Text sx={{ textAlign: "left" }}>You will receive</Text>
             <Text sx={{ textAlign: "right" }}>
               {humanFriendlyNumber(Number(amount))}{" "}
-              {minting ? "stabUSD" : vault.name}
+              {minting ? "stabilUSD" : vault.name}
             </Text>
             <Text sx={{ textAlign: "left" }}>Exchange rate</Text>
             <Text sx={{ textAlign: "right", maxWidth: "12em" }}>
-              1 stabUSD = 1 {vault.name}
+              1 stabilUSD = 1 {vault.name}
             </Text>
           </Grid>
         )}

@@ -29,13 +29,13 @@ export const FAQ: React.FC = () => {
       <Box sx={{ maxWidth: "540px" }}>
         <QuestionAnswer
           question="What is La Stabilité?"
-          answer="La Stabilité is a DeFi protocol that consolidates tokens with the same peg. For example, stabUSD consolidates cUSD and USDC."
+          answer="La Stabilité is a DeFi protocol that consolidates tokens with the same peg. For example, stabilUSD consolidates cUSD and USDC."
         />
         <QuestionAnswer
-          question="What is the STAB token?"
+          question="What is the STABIL token?"
           answer={
             <>
-              The STAB token is a protocol token that is automatically bought
+              The STABIL token is a protocol token that is automatically bought
               back on{" "}
               <Link
                 href="https://app.ubeswap.org"
