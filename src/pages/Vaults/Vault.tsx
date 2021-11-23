@@ -18,8 +18,8 @@ export const Vault: React.FC<Props> = ({ vaultConfig }) => {
   const [vault, refetchVault] = useVault(vaultConfig);
 
   const max = locking
-    ? Number(fromWei(vault?.lpTokenBalance ?? "0"))
-    : Number(fromWei(vault?.vaultBalance ?? "0"));
+    ? fromWei(vault?.lpTokenBalance ?? "0")
+    : fromWei(vault?.vaultBalance ?? "0");
 
   const validAmount = !(
     isNaN(Number(amount)) ||

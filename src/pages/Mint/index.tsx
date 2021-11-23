@@ -37,8 +37,8 @@ export const Mint: React.FC = () => {
     : true;
 
   const max = minting
-    ? Number(fromWei(stabilite?.vaultBalance ?? "0"))
-    : Number(fromWei(stabilite?.stabiliteBalance ?? "0"));
+    ? fromWei(stabilite?.vaultBalance ?? "0")
+    : fromWei(stabilite?.stabiliteBalance ?? "0");
 
   return (
     <Flex
