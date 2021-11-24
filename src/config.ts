@@ -22,6 +22,12 @@ export const vaults: VaultConfig[] = [
     lockAssetName: "cUSD-asUSDC MobLP",
   },
   {
+    address: "0x4195bD7afC2ceCABdF2949f7CBD8E204F44045d7",
+    name: "mcUSD mooVAULT",
+    lockAssetAddress: "0x765DE816845861e75A25fCA122bb6898B8B1282a",
+    lockAssetName: "cUSD",
+  },
+  {
     address: "0x7047E61F3Aa4A1312252dD61a292143abC67F78f",
     name: "cUSD-cUSDC mobVAULT",
     lockAssetAddress: "0xd7Bf6946b740930c60131044bD2F08787e1DdBd4",

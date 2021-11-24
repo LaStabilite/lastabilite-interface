@@ -18,7 +18,7 @@ export const Vault: React.FC<Props> = ({ vaultConfig }) => {
   const [vault, refetchVault] = useVault(vaultConfig);
 
   const max = locking
-    ? fromWei(vault?.lpTokenBalance ?? "0")
+    ? fromWei(vault?.stakeTokenBalance ?? "0")
     : fromWei(vault?.vaultBalance ?? "0");
 
   const validAmount = !(
@@ -28,7 +28,7 @@ export const Vault: React.FC<Props> = ({ vaultConfig }) => {
   );
 
   const needsApproval = validAmount
-    ? toBN(vault?.lpTokenAllowance ?? "0").lt(toBN(toWei(amount)))
+    ? toBN(vault?.stakeTokenAllowance ?? "0").lt(toBN(toWei(amount)))
     : true;
 
   return (
@@ -79,7 +79,7 @@ export const Vault: React.FC<Props> = ({ vaultConfig }) => {
         <Text variant="form">Amount</Text>
         <Text variant="form">
           <Link onClick={() => setAmount(max.toString())}>
-            max: {humanFriendlyNumber(max)}
+            max: {humanFriendlyNumber(max)} {vaultConfig.lockAssetName}
           </Link>
         </Text>
       </Flex>

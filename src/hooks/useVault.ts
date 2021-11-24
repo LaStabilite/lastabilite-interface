@@ -57,7 +57,7 @@ export const useVault = (vaultConfig: VaultConfig) => {
       toastTx(tx.transactionHash);
     };
 
-    const lpToken = new kit.web3.eth.Contract(
+    const stakeToken = new kit.web3.eth.Contract(
       ERC20Abi as AbiItem[],
       vaultConfig.lockAssetAddress
     ) as unknown as ERC20;
@@ -68,34 +68,37 @@ export const useVault = (vaultConfig: VaultConfig) => {
         alert("No account found. Try reconnecting your wallet");
         return;
       }
-      const lpToken = new kit.web3.eth.Contract(
+      const stakeToken = new kit.web3.eth.Contract(
         ERC20Abi as AbiItem[],
         vaultConfig.lockAssetAddress
       ) as unknown as ERC20;
-      const tx = await lpToken.methods
+      const tx = await stakeToken.methods
         .approve(vaultConfig.address, MAX_UINT)
         .send({ from: kit.defaultAccount, gasPrice: DEFAULT_GAS_PRICE });
       toastTx(tx.transactionHash);
     };
 
-    const lpTokenAllowance = address
-      ? await lpToken.methods.allowance(address, vaultConfig.address).call()
+    const stakeTokenAllowance = address
+      ? await stakeToken.methods.allowance(address, vaultConfig.address).call()
       : null;
-    const lpTokenBalance = address
-      ? await lpToken.methods.balanceOf(address).call()
+    const stakeTokenBalance = address
+      ? await stakeToken.methods.balanceOf(address).call()
       : null;
 
-    const lpSwap = new kit.web3.eth.Contract(
-      MobiusSwapAbi as AbiItem[],
-      await vault.methods.lpSwap().call()
-    ) as unknown as MobiusSwap;
+    let virtualPrice = toWei("1");
+    try {
+      const lpSwap = new kit.web3.eth.Contract(
+        MobiusSwapAbi as AbiItem[],
+        await vault.methods.lpSwap().call()
+      ) as unknown as MobiusSwap;
 
-    const virtualPrice = await lpSwap.methods.getVirtualPrice().call();
+      virtualPrice = await lpSwap.methods.getVirtualPrice().call();
+    } catch (e) {}
 
     return {
       vaultBalance,
-      lpTokenBalance,
-      lpTokenAllowance,
+      stakeTokenBalance,
+      stakeTokenAllowance,
       virtualPrice,
       lock,
       unlock,
