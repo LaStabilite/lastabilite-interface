@@ -29,11 +29,11 @@ export const Treasury: React.FC = () => {
           </BlockscoutAddressLink>
         </BlockText>
       </Box>
-      <Box mb={4}>
+      <Flex mb={4} sx={{ flexDirection: "column", alignItems: "center" }}>
         <Heading as="h2">Collateralization</Heading>
         {treasury?.vaultData.map((vd, idx) => (
-          <Flex sx={{ alignItems: "center" }}>
-            <BlockText key={idx} variant="primary">
+          <Flex key={idx} sx={{ alignItems: "center" }}>
+            <BlockText variant="primary">
               {humanFriendlyWei(vd.reserveSize.toString() ?? "0")}{" "}
               <BlockscoutAddressLink address={vd.vaultConfig.address}>
                 {vd.vaultConfig.name}
@@ -52,12 +52,12 @@ export const Treasury: React.FC = () => {
             )}
           </Flex>
         ))}
-      </Box>
-      <Box mb={4}>
+      </Flex>
+      <Flex mb={4} sx={{ flexDirection: "column", alignItems: "center" }}>
         <Heading as="h2">Limits</Heading>
         {treasury?.vaultData.map((vd, idx) => (
-          <Flex sx={{ alignItems: "center" }}>
-            <BlockText key={idx} variant="primary">
+          <Flex key={idx} sx={{ alignItems: "center" }}>
+            <BlockText variant="primary">
               {humanFriendlyWei(vd.depositLimit.toString() ?? "0")}{" "}
               <BlockscoutAddressLink address={vd.vaultConfig.address}>
                 {vd.vaultConfig.name}
@@ -76,7 +76,7 @@ export const Treasury: React.FC = () => {
             )}
           </Flex>
         ))}
-      </Box>
+      </Flex>
     </Flex>
   );
 };

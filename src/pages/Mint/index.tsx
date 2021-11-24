@@ -10,6 +10,7 @@ import {
   Heading,
   Input,
   Link,
+  Select,
   Text,
 } from "theme-ui";
 import { fromWei, toBN, toWei } from "web3-utils";
@@ -21,7 +22,7 @@ export const Mint: React.FC = () => {
   const { connect, address } = useContractKit();
   const [minting, setMinting] = React.useState(true);
   const [amount, setAmount] = React.useState("0");
-  const [vault] = React.useState<VaultConfig>(vaults[0]!);
+  const [vault, setVault] = React.useState<VaultConfig>(vaults[0]!);
   const [stabilite, refetchStabilite] = useStabilite(
     STABILITE_USD,
     vault.address
@@ -102,6 +103,23 @@ export const Mint: React.FC = () => {
             Burn
           </Switcher>
         </Flex>
+        <Select
+          mb={4}
+          onChange={(e) => {
+            const vault =
+              vaults.find((v) => v.address === e.target.value) || vaults[0]!;
+            setVault(vault);
+          }}
+          value={vault.address}
+        >
+          {vaults.map((vault) => {
+            return (
+              <option key={vault.address} value={vault.address}>
+                {vault.name}
+              </option>
+            );
+          })}
+        </Select>
         <Flex
           sx={{
             justifyContent: "space-between",

@@ -19,10 +19,10 @@ export const LogoIcon: React.FC<IIconProps> = ({ size = 32 }) => {
         width="224"
         height="128"
         rx="8"
-        stroke-width="16"
+        strokeWidth="16"
         stroke={fill}
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         fill="none"
       ></rect>
       <circle
@@ -31,9 +31,9 @@ export const LogoIcon: React.FC<IIconProps> = ({ size = 32 }) => {
         r="32"
         fill="none"
         stroke={fill}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="16"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
       ></circle>
       <line
         x1="176"
@@ -42,9 +42,9 @@ export const LogoIcon: React.FC<IIconProps> = ({ size = 32 }) => {
         y2="120"
         fill="none"
         stroke={fill}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="16"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
       ></line>
       <line
         x1="176"
@@ -53,9 +53,9 @@ export const LogoIcon: React.FC<IIconProps> = ({ size = 32 }) => {
         y2="136"
         fill="none"
         stroke={fill}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="16"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
       ></line>
       <line
         x1="80"
@@ -64,9 +64,9 @@ export const LogoIcon: React.FC<IIconProps> = ({ size = 32 }) => {
         y2="120"
         fill="none"
         stroke={fill}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="16"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
       ></line>
       <line
         x1="80"
@@ -75,9 +75,9 @@ export const LogoIcon: React.FC<IIconProps> = ({ size = 32 }) => {
         y2="136"
         fill="none"
         stroke={fill}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="16"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="16"
       ></line>
     </svg>
   );

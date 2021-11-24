@@ -30,7 +30,9 @@ export const Vaults: React.FC = () => {
       <Flex sx={{ flexWrap: "wrap" }}>
         {vaults.map((vaultConfig, idx) => (
           <React.Fragment key={idx}>
-            <Vault vaultConfig={vaultConfig} />
+            <Box mr={4}>
+              <Vault vaultConfig={vaultConfig} />
+            </Box>
           </React.Fragment>
         ))}
       </Flex>
