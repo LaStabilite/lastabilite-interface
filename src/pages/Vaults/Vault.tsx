@@ -129,12 +129,15 @@ export const Vault: React.FC<Props> = ({ vaultConfig }) => {
             {humanFriendlyNumber(
               Number(amount) * Number(fromWei(vault.virtualPrice))
             )}{" "}
-            {locking ? "mobVAULT" : vaultConfig.lockAssetName}
+            {locking
+              ? vaultConfig.name.split(" ")[1]
+              : vaultConfig.lockAssetName}
           </Text>
           <Text sx={{ textAlign: "left" }}>Exchange rate</Text>
           <Text sx={{ textAlign: "right", maxWidth: "12em" }}>
             1 {vaultConfig.lockAssetName} ={" "}
-            {Number(fromWei(vault.virtualPrice)).toLocaleString()} mobVAULT
+            {Number(fromWei(vault.virtualPrice)).toLocaleString()}{" "}
+            {vaultConfig.name.split(" ")[1]}
           </Text>
         </Grid>
       )}
